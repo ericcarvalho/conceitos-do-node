@@ -1,0 +1,10 @@
+# Forçar LF em todos os arquivos de texto
+* text=auto eol=lf
+
+# Garantir que arquivos JS, JSON, etc. sempre usem LF
+*.js text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
