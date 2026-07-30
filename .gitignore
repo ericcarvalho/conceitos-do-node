@@ -10,3 +10,5 @@ temp/
 
 # Ignorar variáveis de ambiente
 .env
+atlas-credentials.env
+/generated/prisma
