@@ -7,7 +7,7 @@ app.use(express.json());
 //const users = [];
 const prisma = new PrismaClient();
 
-app.get('/usuarios', async(req, res) => {
+app.get('/usuarios', async (req, res) => {
     //console.log(req)
     const users = await prisma.user.findMany()
     res.status(200).json(users)
@@ -24,8 +24,8 @@ app.post('/usuarios', async (req, res) => {
             age: req.body.age
         }
     });
-    
-        res.status(201).json(user);
+
+    res.status(201).json(user);
 
 });
 
@@ -34,7 +34,7 @@ app.put('/usuarios/:id', async (req, res) => {
     //users.push(req.body);
     //PROMISSE quando usa await e async
     const user = await prisma.user.update({
-        where:{
+        where: {
             id: req.params.id
         },
         data: {
@@ -43,8 +43,8 @@ app.put('/usuarios/:id', async (req, res) => {
             age: req.body.age
         }
     });
-    
-        res.status(201).json(user);
+
+    res.status(201).json(user);
 
 });
 
@@ -53,12 +53,12 @@ app.delete('/usuarios/:id', async (req, res) => {
     //users.push(req.body);
     //PROMISSE quando usa await e async
     const user = await prisma.user.delete({
-        where:{
+        where: {
             id: req.params.id
         }
     });
-    
-        res.status(200).json({ message: `Usuário ${user.name} deletado com sucesso!` });
+
+    res.status(200).json({ message: `Usuário ${user.name} deletado com sucesso!` });
 
 });
 
